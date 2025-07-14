@@ -15,7 +15,7 @@ if "chat_history" not in st.session_state:
     st.session_state["chat_history"] = []
 
 @st.cache_resource
-def load_model_and_tokenizer(model_path="./My_Model"):
+def load_model_and_tokenizer(model_path="My_Model"):
   tokenizer = AutoTokenizer.from_pretrained(model_path)
   model = AutoModelForSequenceClassification.from_pretrained(model_path)
   device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
